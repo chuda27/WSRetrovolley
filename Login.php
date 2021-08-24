@@ -10,6 +10,7 @@
         $check = mysqli_fetch_array(mysqli_query($conn, $query_check)); 
         $json_array = array();
         $response = "";
+        
         if (isset($check)) {
             $query_check_pass = "select * from user_detail where user_email = '$email' and user_password = '$password'";
             $query_pass_result = mysqli_query($conn, $query_check_pass);
