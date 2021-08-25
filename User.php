@@ -40,7 +40,7 @@
         mysqli_close($conn);
 
     } elseif ($_SERVER['REQUEST_METHOD'] == 'GET') {
-        //update spesific user
+        //select spesific user
         include 'DatabaseConfig.php';
         $conn = mysqli_connect($HostName, $HostUser, $HostPass, $DatabaseName);
 
