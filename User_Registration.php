@@ -22,7 +22,7 @@
         if (isset($check)) {
             $response = array(
                 'code' => 406,
-                'status' => 'User has been registered!'
+                'status' => 'User telah terdaftar, gunakan email lain!'
             );
         } else {
             $query_insert = "insert into user_detail (user_email, user_password, user_fullname, user_gender, user_birthdate) values 
@@ -30,12 +30,12 @@
             if (mysqli_query($conn, $query_insert)) {
                 $response = array(
                     'code' => 201,
-                    'status' => 'User Registered'
+                    'status' => 'User berhasil didaftarkan!'
                 );
             } else {
                 $response = array(
                     'code' => 405,
-                    'status' => 'Registered Error!'
+                    'status' => 'Error saat mendaftar!'
                 );
             }
         }
@@ -56,13 +56,13 @@
             }
             $response = array(
                 'code' => 200,
-                'status' => 'Successful',
+                'status' => 'Berhasil mengambil data user!',
                 'user_list' => $json_array
             );   
         } else {
             $response = array(
                 'code' => 400,
-                'status' => 'Error',
+                'status' => 'Error saat mengambil data user!',
                 'user_list' => 0
             );
         }
