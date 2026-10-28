@@ -12,7 +12,7 @@
         $email = $obj->user_email;
         $password = $obj->user_password;
         $gender = $obj->user_gender;
-        $birthday = $obj->user_birthday;
+        $birthdate = $obj->user_birthdate;
 
         $query_check = "select * from user_detail where user_email = '$email'";
         $check = mysqli_fetch_array(mysqli_query($conn, $query_check));        
@@ -25,8 +25,8 @@
                 'status' => 'User has been registered!'
             );
         } else {
-            $query_insert = "insert into user_detail (user_email, user_password, user_fullname, user_gender, user_birthday) values 
-            ('$email', '$password', '$fullname', '$gender', '$birthday')";
+            $query_insert = "insert into user_detail (user_email, user_password, user_fullname, user_gender, user_birthdate) values 
+            ('$email', '$password', '$fullname', '$gender', '$birthdate')";
             if (mysqli_query($conn, $query_insert)) {
                 $response = array(
                     'code' => 201,
